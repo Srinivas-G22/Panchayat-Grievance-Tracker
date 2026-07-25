@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Panchayat Grievance Register — Presentation Deck</title>
+  <style>
+    @page { size: 13.333in 7.5in; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #1e293b; background: #f8fafc; }
+    .slide { width: 13.333in; height: 7.5in; padding: .55in .72in; position: relative; page-break-after: always; overflow: hidden; background: linear-gradient(135deg, #ffffff, #f1f5f9); }
+    .slide:last-child { page-break-after: auto; }
+    
+    .tag { color: #0056b3; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5pt; font-size: 10pt; margin-bottom: 6pt; }
+    h1 { font-size: 32pt; color: #0f2942; line-height: 1.15; margin-bottom: 12pt; }
+    h2 { font-size: 22pt; color: #0f2942; margin-bottom: 14pt; }
+    h3 { font-size: 15pt; color: #0056b3; margin-bottom: 6pt; }
+    p, li { font-size: 13.5pt; line-height: 1.4; color: #334155; }
+    ul { padding-left: 20pt; }
+    
+    .footer { position: absolute; bottom: .3in; left: .72in; right: .72in; color: #64748b; font-size: 9pt; border-top: 1px solid #cbd5e1; padding-top: 6pt; display: flex; justify-content: space-between; }
+    
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; height: 5.6in; align-items: center; gap: .35in; }
+    .big { font-size: 20pt; font-weight: 700; color: #0f2942; line-height: 1.25; margin-bottom: 16pt; }
+    .card { background: white; border-radius: 12px; padding: 16pt; box-shadow: 0 4px 15px rgba(15,41,66,0.08); border: 1px solid #e2e8f0; }
+    
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14pt; }
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12pt; }
+    
+    .metric-box { background: white; border-radius: 10px; padding: 12pt; border-left: 4px solid #0056b3; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .metric-val { font-size: 24pt; font-weight: 800; color: #0056b3; }
+    
+    .diagram { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12pt; align-items: center; margin: 12pt 0; }
+    .entity { text-align: center; background: white; border: 2px solid #0056b3; border-radius: 8px; padding: 10pt; font-size: 13pt; font-weight: 700; color: #0f2942; }
+    .arrow { text-align: center; font-size: 20pt; color: #0056b3; }
+    .accent-card { background: #0f2942; color: white; }
+    .accent-card h3, .accent-card p { color: white; }
+    .formula { font-family: monospace; font-size: 16pt; font-weight: 700; color: #0056b3; background: #eef6ff; padding: 6pt 10pt; border-radius: 6px; display: inline-block; margin: 6pt 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: Title -->
+  <section class="slide">
+    <div class="hero">
+      <div>
+        <div class="tag">Panchayat Digital Governance Services</div>
+        <h1>Panchayat Grievance Register & Resolution Tracker</h1>
+        <p class="big">An intelligent, priority-queued grievance management system for ward clerks and panchayat officials.</p>
+        <p><b>Panchayat Grievance Tracker Project</b><br>Full Stack Web & Relational Database Solution</p>
+      </div>
+      <div class="card accent-card">
+        <h3>Core Objective</h3>
+        <p>Record every public complaint against ward, department, category, and assigned officer. Ensure unresolved cases remain visible and sorted oldest-first so critical issues receive priority attention.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Slide 1 of 7</span><span>Panchayat Grievance Register and Resolution Tracker</span></div>
+  </section>
+
+  <!-- Slide 2: Problem & Users -->
+  <section class="slide">
+    <div class="tag">Problem Statement</div>
+    <h2>Challenges in Manual Grievance Maintenance</h2>
+    <div class="grid3" style="margin-bottom:14pt;">
+      <div class="card">
+        <div class="metric-val" style="color:#dc2626">❌</div>
+        <h3>Hidden Old Cases</h3>
+        <p>Paper registers bury older complaints under new entries, causing delay in resolution.</p>
+      </div>
+      <div class="card">
+        <div class="metric-val" style="color:#d97706">❓</div>
+        <h3>No Citizen Visibility</h3>
+        <p>Citizens cannot track grievance status, assigned officers, or expected resolution timelines.</p>
+      </div>
+      <div class="card">
+        <div class="metric-val" style="color:#8b5cf6">📊</div>
+        <h3>Lack of Bottleneck Metrics</h3>
+        <p>No analytical tracking for department response times or officer workloads.</p>
+      </div>
+    </div>
+    <div class="card" style="background:#eef6ff; border-color:#0056b3">
+      <p><b>Target Users:</b> Panchayat Ward Clerks (for daily register management), Department Officers (for task resolution), and Citizens (for tracking complaints).</p>
+    </div>
+    <div class="footer"><span>Slide 2 of 7</span><span>Problem & Affected Users</span></div>
+  </section>
+
+  <!-- Slide 3: Solution Architecture -->
+  <section class="slide">
+    <div class="tag">Solution Overview</div>
+    <h2>Modern Government Portal Architecture</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>React Frontend (Vite)</h3>
+        <ul>
+          <li>Interactive Government Portal dashboard theme</li>
+          <li>Live search across ID, Citizen, Ward, Dept, Category & Officer</li>
+          <li>Department-colored visual badges & status indicators</li>
+          <li>Oldest-first queue sorting & 6 summary statistics cards</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Express REST API & SQLite</h3>
+        <ul>
+          <li>Express API server delivering <code>/api/grievances</code></li>
+          <li>Normalized 8-table relational SQLite database</li>
+          <li>Append-only grievance history tracking log</li>
+          <li>Automatic offline fallback to JSON static dataset</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer"><span>Slide 3 of 7</span><span>Architecture & Core Features</span></div>
+  </section>
+
+  <!-- Slide 4: Database Design -->
+  <section class="slide">
+    <div class="tag">Database Architecture</div>
+    <h2>Normalized Relational SQLite Schema (8 Tables)</h2>
+    <div class="diagram">
+      <div class="entity">Citizen & Ward<br><small>foreign keys</small></div>
+      <div class="arrow">➔</div>
+      <div class="entity" style="background:#0f2942; color:white">Grievance<br><small>primary register</small></div>
+    </div>
+    <div class="diagram">
+      <div class="entity">Department & Category<br><small>hierarchical scope</small></div>
+      <div class="arrow">➔</div>
+      <div class="entity">Grievance History<br><small>append-only status log</small></div>
+    </div>
+    <div class="grid2" style="margin-top:10pt">
+      <div class="card">
+        <h3>Constraints & Integrity</h3>
+        <p>Foreign Keys, <code>CHECK</code> constraints (priority 1–5, affected count ≥ 1), <code>UNIQUE</code> department/ward names, and future-date triggers.</p>
+      </div>
+      <div class="card">
+        <h3>Analytical SQL Queries</h3>
+        <p>10 queries for Open cases, Pending > 15 days, Department metrics, Ward summaries, Officer workload, and Average resolution times.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Slide 4 of 7</span><span>Database Design & Schema</span></div>
+  </section>
+
+  <!-- Slide 5: Derived Statistics -->
+  <section class="slide">
+    <div class="tag">Performance Analytics</div>
+    <h2>Derived Metric Calculations & Formulas</h2>
+    <div class="grid2" style="margin-bottom:14pt">
+      <div class="card">
+        <h3>Days Pending (Open & In Progress)</h3>
+        <div class="formula">Days Pending = Today - Date Filed</div>
+        <p>Identifies long-waiting grievances requiring urgent dispatch.</p>
+      </div>
+      <div class="card">
+        <h3>Resolution Days (Resolved Cases)</h3>
+        <div class="formula">Resolution Days = Date Resolved - Date Filed</div>
+        <p>Measures actual turnaround time for completed complaints.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Average Resolution Time Metric</h3>
+      <div class="formula">Avg Resolution Time = Σ (Resolution Days) / Total Resolved</div>
+      <p>Calculates overall portal efficiency and department SLA performance.</p>
+    </div>
+    <div class="footer"><span>Slide 5 of 7</span><span>Derived Statistics & Formulas</span></div>
+  </section>
+
+  <!-- Slide 6: Application Workflow & Verification -->
+  <section class="slide">
+    <div class="tag">Quality Assurance</div>
+    <h2>Rigorous Testing & Verification</h2>
+    <div class="grid4" style="margin-bottom:14pt">
+      <div class="metric-box">
+        <div class="metric-val" style="color:#16a34a">12/12</div>
+        <p>Constraint Tests Passed</p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val" style="color:#16a34a">15/15</div>
+        <p>Data Integrities Passed</p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val" style="color:#16a34a">10/10</div>
+        <p>API Endpoints Passed</p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val" style="color:#16a34a">0</div>
+        <p>Build Errors</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Verification Completed</h3>
+      <p>Tested live search responsiveness, multi-criteria filtering (Department, Status, Ward, Sort), detail timeline rendering, Express API endpoints, and production Vite build bundle.</p>
+    </div>
+    <div class="footer"><span>Slide 6 of 7</span><span>Testing & Verification Summary</span></div>
+  </section>
+
+  <!-- Slide 7: Conclusion & Roadmap -->
+  <section class="slide">
+    <div class="tag">Future Vision</div>
+    <h2>Future Enhancements & Final Conclusion</h2>
+    <div class="grid2" style="margin-bottom:14pt">
+      <div class="card">
+        <h3>Current Working Solution</h3>
+        <ul>
+          <li>Full Panchayat Grievance Register UI</li>
+          <li>Express REST API backend & SQLite DB</li>
+          <li>Live search, department badges & 6 summary metrics</li>
+          <li>Detail page history timeline log</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Future Enhancements</h3>
+        <ul>
+          <li>Interactive clerk status update modal</li>
+          <li>Automated SMS / WhatsApp status notifications</li>
+          <li>Geographic GIS heatmap of complaint hotspots</li>
+        </ul>
+      </div>
+    </div>
+    <p class="big" style="text-align:center; color:#0056b3">Thank You!</p>
+    <div class="footer"><span>Slide 7 of 7</span><span>Conclusion & Future Roadmap</span></div>
+  </section>
+
+</body>
+</html>
