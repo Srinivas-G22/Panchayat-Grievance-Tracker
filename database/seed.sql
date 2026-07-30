@@ -166,3 +166,7 @@ INSERT INTO grievance_history (grievance_id, status_id, changed_by, notes) VALUE
     -- 1017: Open -> In Progress
     (1017, 1, 2, 'Initial filing'),
     (1017, 2, 2, 'Bulb and holder replaced');
+
+INSERT INTO citizen(name, phone, address)
+VALUES
+('Suresh Kumar','9876543210','Ward 2');

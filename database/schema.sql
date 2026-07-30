@@ -48,11 +48,20 @@ CREATE TABLE status (
 -- ---------------------------------------------------------------------
 -- citizen
 -- ---------------------------------------------------------------------
+--before change---
+--CREATE TABLE citizen (
+--    citizen_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--    name       TEXT    NOT NULL CHECK (name != ''),
+--    phone      TEXT,
+--    address    TEXT
+--);
+
+--after change---
 CREATE TABLE citizen (
     citizen_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name       TEXT    NOT NULL CHECK (name != ''),
-    phone      TEXT,
-    address    TEXT
+    name TEXT NOT NULL,
+    phone TEXT UNIQUE NOT NULL,
+    address TEXT
 );
 
 -- ---------------------------------------------------------------------
@@ -140,6 +149,13 @@ CREATE TABLE grievance_history (
     FOREIGN KEY (grievance_id) REFERENCES grievance (grievance_id),
     FOREIGN KEY (status_id)    REFERENCES status    (status_id),
     FOREIGN KEY (changed_by)   REFERENCES officer   (officer_id)
+);
+
+CREATE TABLE citizen (
+    citizen_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    phone TEXT UNIQUE NOT NULL,
+    address TEXT
 );
 
 -- ---------------------------------------------------------------------

@@ -158,3 +158,12 @@ SELECT
 FROM grievance
 GROUP BY strftime('%Y-%m', date_filed)
 ORDER BY month ASC;
+
+
+
+--11.EXPLAIN QUERY PLAN----
+--before--
+EXPLAIN QUERY PLAN SELECT g.grievance_id, c.name, d.department_name, s.status_name, g.date_filed FROM grievance g JOIN citizen c ON g.citizen_id = c.citizen_id JOIN department d ON g.department_id = d.department_id JOIN status s ON g.status_id = s.status_id ORDER BY g.date_filed ASC;
+--after--
+--CREATE INDEX idx_grievance_date ON grievance(date_filed);
+--EXPLAIN QUERY PLAN SELECT g.grievance_id, c.name, d.department_name, s.status_name, g.date_filed FROM grievance g JOIN citizen c ON g.citizen_id = c.citizen_id JOIN department d ON g.department_id = d.department_id JOIN status s ON g.status_id = s.status_id ORDER BY g.date_filed ASC;
